@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="rwApp">
+<head>
+  <meta charset="utf-8">
+   <meta http-equiv=X-UA-Compatible content="IE=edge">
+   <meta name=viewport content="width=device-width,initial-scale=1">
+
+  <script src="../app/bower_components/jquery/dist/jquery.js"></script>
+
+
+</head>
+ <body>
+
+   <div class="cont" id="contentdiv">
+                                           <div class="intro">
+                                               <!-- 书介绍 -->
+                                               <div class="data">
+                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                       <tbody><tr>
+                                                                                                                   <td>
+                                                               <b>总点击：</b>4389341
+                                                           </td>
+                                                           <td>
+                                                               <b>会员周点击：</b>969
+                                                           </td>
+                                                                                                                  <td>
+                                                               <b>总推荐：</b>474169
+                                                           </td>
+                                                           <td>
+                                                               <b>总字数：</b>7126247
+                                                           </td>
+                                                           <td>
+                                                                                                                           	<b class="red"><strong>本书起点中文网首发</strong></b>
+                                                             	                                                        </td>
+                                                       </tr>
+                                                   </tbody></table>
+                                               </div>
+                                               <div class="txt">
+                                                   <b style="color: Red; display: none" id="essactive">[新人写作季作品]</b>
+                                                   <b style="color: Red; display: none" id="wuxianworks">[无线征文悬赏令Ⅱ]</b>
+                                                   <b style="color: Red; display: none" id="qidiancup">[中国作家起点梦想杯参赛作品]</b>
+                                                   <b style="color: Red; display: none" id="xiankuang"> [我为仙狂征文大赛]</b>
+                                                   <b style="color: Red; display: none" id="shanggu"> [上古世纪征文参赛作品]</b>
+                                                   <b style="color: Red; display: none" id="nizhan"> [逆战征文参赛作品]</b>
+                                                                                                     <b style="color: Red; display: none" id="wenxueliansai">[首届中国互联网文学联赛参赛作品]</b>
+                                                                                                                                                   <b style="color: Red; display: none" id="limitfreetime">距离本书限时免费还有：</b>
+                                                   <script type="text/javascript">
+                                                       ShowBook.BookInfo.FreeTimeIntval[0] = setInterval(function() {
+                                                           if (ShowBook.BookInfo.FreeStatus == "1") {
+                                                               ShowBook.FreeChannelTimerDown();
+                                                           }
+                                                       }, 1000);
+                                                   </script>
+
+                                                   <div class="book_vote201412">
+
+   												        <style type="text/css">
+   														.book_vote201412 {padding:0 0 5px 0;}
+   														.book_vote201412 .opt {vertical-align:middle;display:inline-block;width:71px;overflow:hidden;}
+   														.book_vote201412 .tp {cursor:pointer; width:71px;height:26px;overflow:hidden;display:block;text-indent:-999px;text-align:left;border:0;background:url(/Images/2014sd_tp.png) 0 0 no-repeat;}
+   														.book_vote201412 .jy {cursor:pointer;width:71px;height:26px;overflow:hidden;display:block;text-indent:-999px;text-align:left;border:0;background:url(/Images/2014sd_jy.png) 0 0 no-repeat;}
+   														</style>
+
+                                                       <table width="100%" cellpadding="0" cellspacing="0">
+                                                           <tbody><tr>
+                                                               <td width="50%">
+                                                                                                                              </td>
+                                                               <td align="right">
+
+                                                                                                                              </td>
+                                                           </tr>
+                                                       </tbody></table>
+                                                   </div>
+
+                                                   <script>
+
+                                                       var popbox = {
+                                                           close: function() {
+                                                               for (var h in Snda.Layer.Hash) {
+                                                                   var e = parent.document.getElementById('pop_close_' + h);
+                                                                   if (!e) return;
+                                                                   if (document.all) e.click();
+                                                                   else if (document.createEvent) {
+                                                                       var ev = document.createEvent('MouseEvents');
+                                                                       ev.initEvent('click', false, true);
+                                                                       e.dispatchEvent(ev);
+                                                                   }
+                                                               }
+                                                           }
+                                                       }
+                                                   </script>
+
+                                                   <span itemprop="description">
+                                                      　　为了救一个小女孩，刚刚毕业的萧奇博士，从美国穿越回了八年前的中国，回到了自己的高中时代。<br>&nbsp;&nbsp;&nbsp;     作为一个重生者，萧奇究竟该怎样去投入这个波澜壮阔的变化潮流之中，从而站在金字塔的顶尖呢？<br>&nbsp;&nbsp;&nbsp;     白手起家的萧奇，誓要做到两全其美，成就最好的美梦时代！<br>&nbsp;&nbsp;&nbsp;
+                                                   </span>
+                                               </div>
+                                               <div>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;(本站郑重提醒：本故事纯属虚构，如有雷同，纯属巧合，切勿模仿。)
+                                                   </div>
+                                           </div>
+                                       </div>
+</body>
+</html>

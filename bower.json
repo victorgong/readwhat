@@ -1,0 +1,26 @@
+{
+  "name": "readwhat",
+  "description": "top ten novels",
+  "main": "index.js",
+  "authors": [
+    "victor"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-masonry": "^0.16.0",
+    "ui.bootstrap": "^1.1.2",
+    "angular-ui": "^0.4.0",
+    "angular-ui-utils": "^3.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+﻿<div class="container-fluid">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div ng-repeat="book in books" class="jumbotron">
+      <div class="row">
+        <h2 class="col-sm-9">{{books.length-$index | rankname}} {{book.name}}<span class="badge">{{book.rank | ranknum}}</span></h2>
+    		<div class="pull-right col-sm-3">
+    	      <h4>{{book.author}}</h4>
+    		</div>
+	   </div>
+      <p ng-bind-html="book.descrip | unsafe"></p>
+      <ul class="nav nav-pills">
+	    <li role="presentation" ng-repeat="tag in book.tags"><label class="btn">{{tag}}</label></li>
+	  </ul>
+
+	 <div class="row" style="margin-top:5px" masonry resize-on-reload>
+	  <div class="masonry-brick panel panel-default col-md-3 col-sm-4 col-xs-6" style="margin-bottom:5px" ng-repeat="comment in book.comments">
+				<div class="panel-body" ><span style="word-break: break-all; word-wrap: break-word;"ng-bind-html="comment.desc | unsafe"></span></div>
+				<div class="panel-body small"><span>{{comment.who}}</span> <span class="pull-right">{{comment.when}}</span></div>
+	  </div>
+
+	</div>
+      <p>
+        <a class="btn btn-lg btn-primary" href="{{book.targetHref}}" target="blank" role="button">去阅读<small><small>(最后更新:{{book.lastUpdate}})</small></small></a>
+      </p>
+    </div>
+</div>
