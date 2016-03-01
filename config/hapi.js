@@ -29,7 +29,7 @@ module.exports = function () {
   var server = new Hapi.Server(serverOptions);
 
 
-  server.connection({port: Config.port});
+  server.connection({port: Config.port,address:'127.0.0.1'});
 
   // Setup global variables
   server.app.sessionName = Config.sessionName;
