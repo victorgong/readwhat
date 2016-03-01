@@ -2,12 +2,13 @@
 
 var store = require('../lib/store');
 var CrowerHelper = require('../lib/crower_helper');
-var Conf = require('../config/crower.js');
+var CrowerConf = require('../config/crower.js');
+var Conf = require('../config/config');
 process.on('uncaughtException',function(err){
    console.log(err);
 });
 store(function(waterline){
-  Conf.forEach(function(option){
+  CrowerConf.forEach(function(option){
     waterline.collections.book.find({from:option.from}).limit(10).sort('rank desc').exec(function(err,books){
   		new CrowerHelper(Conf.cron.concurrent || 5,function(book){
   			var bookUniqueId = book.fromUniqueId;
