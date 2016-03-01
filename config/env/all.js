@@ -31,6 +31,7 @@ module.exports = {
   },
   // The session cookie name
   sessionName: 'rw_',
+  cron: {},
   log: {
     enabled: true,
     // Stream defaults to process.stdout

@@ -1,6 +1,7 @@
 ﻿'use strict'
 var store = require('../lib/store');
 var CrowerConf = require('../config/crower.js');
+
 process.on('uncaughtException',function(err){
    console.log(err);
 });
