@@ -23,9 +23,6 @@ var Comment = {
         return Uuid.v4();
       }
     },
-	book: {
-	  model: 'book'
-	},
     who: {
       type: 'string',
       defaultsTo: '匿名'
@@ -49,7 +46,11 @@ var Comment = {
 	 fromUniqueId:{
 	  type: 'string',
 	  defaultsTo: ''
-	 }
+  },
+   bookUniqueId:{
+     type:'string',
+     defaultsTo:''
+   }
   }
 };
 

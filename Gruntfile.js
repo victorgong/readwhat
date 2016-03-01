@@ -136,7 +136,7 @@ module.exports = function(grunt) {
   grunt.registerTask('lint', ['jshint', 'csslint']);
 
   // Build task(s).
-  grunt.registerTask('build', ['env:production','lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin']);
+  grunt.registerTask('build', ['env:development','lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin']);
 
   // Test task.
   grunt.registerTask('test', ['copy:localConfig', 'test:server', 'test:client']);

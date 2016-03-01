@@ -9,9 +9,19 @@ rwServices.factory('Book', ['$resource','Util',
 	var baseUri = "api/books/";
 	var getThisWeek = function(){
 		return $resource(baseUri+'thisweek?t='+Util.ranFunc().toString(), {}, {
-			  query: {method:'GET', isArray:true}
-			}).query();
+        			  query: {method:'GET', isArray:true}
+        			}).query();
 	};
+  var getComments = function(book){
+    return $resource(baseUri+'getcomments/:from/:bookid?t=:ts', {
+            from:'@from',
+            bookid:'@bookid',
+            ts: '@ts'
+            }, {
+    			  query: {method:'GET', isArray:true}
+    			}).query({from:book.from,bookid:book.fromUniqueId,ts:Util.ranFunc().toString()});
+  };
+
 	var getLastWeek = function(){
 		return $resource(baseUri+'lastweek?t='+Util.ranFunc().toString(), {}, {
 			  query: {method:'GET', isArray:true}
@@ -27,7 +37,8 @@ rwServices.factory('Book', ['$resource','Util',
 	return {
 			thisWeek: getThisWeek,
 			lastWeek: getLastWeek,
-			thWeek: getThWeek
+			thWeek: getThWeek,
+      getComments: getComments
 	       };
   }]);
 

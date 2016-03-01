@@ -12,8 +12,8 @@
 	    <li role="presentation" ng-repeat="tag in book.tags"><label class="btn">{{tag}}</label></li>
 	  </ul>
 
-	 <div class="row" style="margin-top:5px" masonry resize-on-reload>
-	  <div class="masonry-brick panel panel-default col-md-3 col-sm-4 col-xs-6" style="margin-bottom:5px" ng-repeat="comment in book.comments">
+	 <div class="row" style="margin-top:5px" masonry resize-on-reload ng-controller='CommentCtrl'>
+	  <div class="masonry-brick panel panel-default col-md-3 col-sm-4 col-xs-6" style="margin-bottom:5px" ng-repeat="comment in comments">
 				<div class="panel-body" ><span style="word-break: break-all; word-wrap: break-word;"ng-bind-html="comment.desc | unsafe"></span></div>
 				<div class="panel-body small"><span>{{comment.who}}</span> <span class="pull-right">{{comment.when}}</span></div>
 	  </div>

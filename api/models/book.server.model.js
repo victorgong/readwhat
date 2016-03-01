@@ -40,10 +40,6 @@ var Book = {
       type: 'array',
 	    defaultsTo: []
     },
-	 comments: {
-      collection: 'comment',
-	  via: 'book'
-    },
 	 targetHref: {
       type: 'string',
       defaultsTo: '',

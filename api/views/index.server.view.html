@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="rwApp">
+<head>
+  <meta charset="utf-8">
+   <meta http-equiv=X-UA-Compatible content="IE=edge">
+   <meta name=viewport content="width=device-width,initial-scale=1">
+   <title>什么值得买</title>
+   {% for cssFile in cssFiles %}
+   <link rel="stylesheet" href="{{cssFile}}">
+   {% endfor %}
+   {% for jsFile in jsFiles %}
+   <script type="text/javascript" src="{{jsFile}}"></script>
+   {% endfor %}
+</head>
+ <body>
+  <!-- Static navbar -->
+    <ng-include src="'partials/header.client.view.html'"></ng-include>
+    <div ng-view></div>
+  <footer>
+    <div class="container-fluid" style="text-align:center">
+      <p>Copyright © 2016 readwhat.cn. All Rights Reserved. 睿娃公司 版权所有</p>
+    </div>
+  </footer>
+
+</body>
+</html>

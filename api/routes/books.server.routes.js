@@ -8,10 +8,22 @@ module.exports = function (server){
 
   server.route(
   [{
+      path: '/',
+      method: 'GET',
+      handler: {
+        view:'index'
+      }
+   },
+    {
       path: '/api/books/thisweek',
       method: 'GET',
       handler: Books.thisWeek
    },
+   {
+       path: '/api/books/getcomments/{from}/{bookid}',
+       method: 'GET',
+       handler: Books.getComments
+    },
    {
       path: '/api/books/lastweek',
       method: 'GET',

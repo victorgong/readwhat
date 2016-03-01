@@ -43,8 +43,26 @@ module.exports = {
   },
   assets: {
     lib: {
-      css: [],
-      js: []
+      css: [
+        'app/bower_components/bootstrap/dist/css/bootstrap.min.css'
+      ],
+      js: [
+        'app/bower_components/jquery/dist/jquery.js',
+        'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
+        'app/bower_components/angular/angular.js',
+        'app/bower_components/angular-route/angular-route.js',
+        'app/bower_components/angular-resource/angular-resource.js',
+        'app/bower_components/jquery-bridget/jquery-bridget.js',
+        'app/bower_components/get-size/get-size.js',
+        'app/bower_components/ev-emitter/ev-emitter.js',
+        'app/bower_components/desandro-matches-selector/matches-selector.js',
+        'app/bower_components/fizzy-ui-utils/utils.js',
+        'app/bower_components/outlayer/item.js',
+        'app/bower_components/outlayer/outlayer.js',
+        'app/bower_components/masonry/masonry.js',
+        'app/bower_components/imagesloaded/imagesloaded.js',
+        'app/bower_components/angular-masonry/angular-masonry.js'
+      ]
     },
     css: [
       'app/css/app.css'

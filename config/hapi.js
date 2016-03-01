@@ -17,7 +17,7 @@ var Fs         = require('fs'),
 module.exports = function () {
 
   var serverOptions = {
-    
+
     connections: {
       router: {
         stripTrailingSlash: true
@@ -28,17 +28,18 @@ module.exports = function () {
   // Initialize hapi app
   var server = new Hapi.Server(serverOptions);
 
-  
+
   server.connection({port: Config.port});
 
   // Setup global variables
   server.app.sessionName = Config.sessionName;
 
- 
+
 
   var plugins = [
     { register: require('bell') },
     { register: require('inert') },
+    { register: require('vision') },
 	_.extend({
       register: Dogwater},waterline())
   ];
@@ -57,7 +58,20 @@ module.exports = function () {
     if (err) {
       console.error(err);
     }
-
+    server.views({
+       engines: {
+         'server.view.html': require('swig')
+       },
+       path: './api/views',
+       isCached: process.env.NODE_ENV !== 'development',
+       context: {
+         title: Config.app.title,
+         description: Config.app.description,
+         keywords: Config.app.keywords,
+         jsFiles: Config.getJavaScriptAssets(),
+         cssFiles: Config.getCSSAssets()
+       }
+     });
     // Setting the app router and static folder
     server.route({
       method: 'GET',
@@ -71,9 +85,9 @@ module.exports = function () {
       }
     });
 
-    
+
     // Globbing routing files
-	
+
     Config.getGlobbedFiles('./api/routes/**/*.js').forEach(function (routePath) {
       require(Path.resolve(routePath))(server);
     });

@@ -21,6 +21,11 @@ rwControllers.controller('ThisWeekCtrl', ['$scope', 'Book',
   function($scope, Book) {
     $scope.books = Book.thisWeek();
   }]);
+  rwControllers.controller('CommentCtrl', ['$scope', 'Book',
+    function($scope, Book) {
+      var book = $scope.$parent.book;
+      $scope.comments = Book.getComments(book);
+    }]);
  rwControllers.controller('LastWeekCtrl', ['$scope', 'Book',
   function($scope, Book) {
     $scope.books = Book.lastWeek();
