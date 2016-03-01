@@ -6,7 +6,7 @@ var Conf = require('../config/crower.js');
 store(function(waterline){
   Conf.forEach(function(option){
     waterline.collections.book.find({isDirty:true,from:option.from}).exec(function(err,books){
-  			new CrowerHelper(Conf.cron.concurrent || 5,,function(book){
+  			new CrowerHelper(Conf.cron.concurrent || 5,function(book){
   				var bookUniqueId = book.fromUniqueId;
 
   				return 	{url:book.targetHref,
