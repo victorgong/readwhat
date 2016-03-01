@@ -9,7 +9,7 @@ process.on('uncaughtException',function(err){
 store(function(waterline){
   Conf.forEach(function(option){
     waterline.collections.book.find({from:option.from}).limit(10).sort('rank desc').exec(function(err,books){
-  		new CrowerHelper(5,function(book){
+  		new CrowerHelper(Conf.cron.concurrent || 5,,function(book){
   			var bookUniqueId = book.fromUniqueId;
   			var url = book.targetHref;
   			if (option.commentUrl) {
