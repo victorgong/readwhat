@@ -33,4 +33,4 @@ node_modules
 .node_repl_history
 
 .tmp
-config/env.production.js
+config/env/production.js
