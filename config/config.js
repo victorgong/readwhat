@@ -15,7 +15,7 @@ var _      = require('lodash'),
 var resolvingConfig = function () {
 
   var conf = {};
-  var env = process.env.NODE_ENV || 'production';
+  var env = process.env.NODE_ENV || 'development';
   conf = _.extend(
     require('./env/all'),
     require('./env/' + env) || {}

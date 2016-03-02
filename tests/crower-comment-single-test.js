@@ -8,9 +8,11 @@ var moment = require('moment')();
 process.on('uncaughtException',function(err){
    console.log(err);
 });
+
+var args = process.argv.slice(2);
 store(function(waterline){
     CrowerConf.forEach(function(option){
-      waterline.collections.book.find({from:option.from,fromUniqueId:'356106'}).exec(function(err,books){
+      waterline.collections.book.find({from:option.from,fromUniqueId:args}).exec(function(err,books){
     		new CrowerHelper(Conf.cron.concurrent || 5,function(book){
     			var bookUniqueId = book.fromUniqueId;
     			var url = book.targetHref;

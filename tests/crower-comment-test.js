@@ -11,7 +11,7 @@ process.on('uncaughtException',function(err){
 store(function(waterline){
   CrowerConf.forEach(function(option){
     waterline.collections.book.find({from:option.from,year:moment.year(),week:moment.week()}).sort('rank desc').limit(10).exec(function(err,books){
-  		new CrowerHelper(Conf.cron.concurrent || 5,function(book){
+  		new CrowerHelper(Conf.cron.concurrent || 2,function(book){
   			var bookUniqueId = book.fromUniqueId;
   			var url = book.targetHref;
   			if (option.commentUrl) {
