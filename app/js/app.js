@@ -10,6 +10,10 @@ var rwApp = angular.module('rwApp', [
   'wu.masonry'
 ]);
 
+rwApp.config(['$locationProvider',function($locationProvider) {
+  $locationProvider.hashPrefix('!');
+}]);
+
 rwApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.

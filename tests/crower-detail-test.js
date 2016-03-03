@@ -7,14 +7,14 @@ var Conf = require('../config/config.js');
 var moment = require('moment')();
 store(function(waterline){
   CrowerConf.forEach(function(option){
-    waterline.collections.book.find({isDirty:true,from:option.from,year:moment.year(),week:moment.week()}).exec(function(err,books){
+    waterline.collections.book.find({isDirty:true,from:option.from}).exec(function(err,books){
   			new CrowerHelper(Conf.cron.concurrent || 2,function(book){
   				var bookUniqueId = book.fromUniqueId;
 
   				return 	{url:book.targetHref,
   								parser:require(option.detailParser),
   								store: waterline,
-  								data: book.id};
+  								data: book};
   			}).run(books);
   	});
   });

@@ -8,8 +8,8 @@ var Uuid = require('node-uuid');
 /**
  * Article Schema
  */
-var Comment = {
-  identity: 'comment',
+var Rank = {
+  identity: 'rank',
   connection: 'simple',
   autoPK: false,
   autoCreatedAt: true,
@@ -23,22 +23,19 @@ var Comment = {
         return Uuid.v4();
       }
     },
-    who: {
-      type: 'string',
-      defaultsTo: '匿名'
+    rankVal: {
+      type: 'float',
+      defaultsTo: 0,
+      required: true
     },
-    title: {
-      type: 'string',
-      defaultsTo: ''
-    },
-	desc: {
-	  type: 'text',
-	  defaultsTo: ''
+	 year:{
+	  type: 'integer',
+	  defaultsTo: 2016
+	 },
+	 week:{
+	  type: 'integer',
+	  defaultsTo: 1
 	},
-	when: {
-      type: 'string',
-      defaultsTo: ''
-    },
 	 from:{
 	  type:'string',
       defaultsTo: ''
@@ -47,14 +44,11 @@ var Comment = {
 	  type: 'string',
 	  defaultsTo: ''
   },
-   bookUniqueId:{
-     type:'string',
-     defaultsTo:''
-   },
    book:{
     model:'book'
    }
+   
   }
 };
 
-module.exports = Comment;
+module.exports = Rank;

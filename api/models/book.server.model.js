@@ -23,11 +23,6 @@ var Book = {
         return Uuid.v4();
       }
     },
-    rank: {
-      type: 'float',
-      defaultsTo: 0,
-      required: true
-    },
     name: {
       type: 'text',
       defaultsTo: ''
@@ -53,14 +48,6 @@ var Book = {
 		type: 'string',
 		defaultsTo: ''
 	 },
-	 year:{
-	  type: 'integer',
-	  defaultsTo: 2016
-	},
-	 week:{
-	  type: 'integer',
-	  defaultsTo: 1
-	},
 	 from:{
 	  type:'string',
       defaultsTo: ''
@@ -72,6 +59,10 @@ var Book = {
    isDirty:{
      type: 'boolean',
      defaultsTo: true
+   },
+   comments:{
+    collection:'comment',
+    via: 'book'
    }
   }
 };

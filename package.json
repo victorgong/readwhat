@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bell": "^6.3.0",
+    "bluebird": "^3.3.3",
     "boom": "^3.1.2",
     "bower": "^1.7.7",
     "chalk": "^1.1.1",
