@@ -20,26 +20,6 @@ exports.thisWeek = function (request, reply) {
       .exec(function(err,data){
          reply(data.reverse());
        });
-      
-      /*
-  var finalRanks =[];
-  Rank.find({year:year, week:week}).sort('rankVal desc').limit(10).populate('book')
-      .then(function(ranks){
-          Promise.map(ranks,function(rank){
-              return Book.findOne({id:rank.book.id}).populate('comments',{limit:10,sort:'createdAt desc'})
-                         .then(function(book){
-                           var newRank = _.clone(rank);
-                           newRank.book = book;
-                           finalRanks.push(newRank);
-                         });
-
-          }).then(function(){
-              //reply(finalRanks.reverse());
-              reply(_.sortBy(finalRanks,'rankVal'));
-
-          });  
-        });
-        */
   
  };
  exports.getComments = function (request, reply) {
