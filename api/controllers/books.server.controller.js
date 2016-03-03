@@ -15,6 +15,13 @@ exports.thisWeek = function (request, reply) {
   var moment = Moment();
   var year = moment.year();
   var week = moment.week();
+  Rank.find({year:year, week:week}).sort('rankVal desc').limit(10).populate('book')
+      .populate('book.comments',{limit:10,sort:'createdAt desc'})
+      .exec(function(err,data){
+         reply(data.reverse());
+       });
+      
+      /*
   var finalRanks =[];
   Rank.find({year:year, week:week}).sort('rankVal desc').limit(10).populate('book')
       .then(function(ranks){
@@ -32,6 +39,7 @@ exports.thisWeek = function (request, reply) {
 
           });  
         });
+        */
   
  };
  exports.getComments = function (request, reply) {
