@@ -27,8 +27,8 @@ exports.thisWeek = function (request, reply) {
                          });
 
           }).then(function(){
-              reply(finalRanks.reverse());
-              //reply(_.sortBy(finalRanks,'rankVal'));
+              //reply(finalRanks.reverse());
+              reply(_.sortBy(finalRanks,'rankVal'));
 
           });  
         });
