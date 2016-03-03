@@ -34,3 +34,4 @@ node_modules
 
 .tmp
 config/env/production.js
+.DS_Store
