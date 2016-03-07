@@ -39,6 +39,7 @@
     "grunt-node-inspector": "^0.4.1",
     "grunt-nodemon": "^0.4.1",
     "hapi": "^13.0.0",
+    "hapi-prerender": "^1.0.0",
     "https": "^1.0.0",
     "inert": "^3.2.0",
     "load-grunt-tasks": "^3.4.0",

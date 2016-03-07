@@ -40,6 +40,7 @@ module.exports = function () {
     { register: require('bell') },
     { register: require('inert') },
     { register: require('vision') },
+    {register: require('hapi-prerender')},
 	_.extend({
       register: Dogwater},waterline())
   ];
