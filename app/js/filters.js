@@ -29,3 +29,8 @@ app.filter('ranknum',[ function() {
     return Math.floor(input * 10000);
 	}
 }]);
+app.filter('topweeks',[ function() {
+  return function(input){
+    return input.toString()+'周上榜';
+  }
+}]);

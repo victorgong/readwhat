@@ -63,6 +63,10 @@ var Book = {
    comments:{
     collection:'comment',
     via: 'book'
+   },
+   topWeeks:{
+    type: 'integer',
+    defaultsTo: 0
    }
   }
 };
