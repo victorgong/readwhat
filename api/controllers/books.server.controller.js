@@ -22,6 +22,18 @@ exports.thisWeek = function (request, reply) {
        });
   
  };
+ exports.index = function(request,reply){
+  var meta = request.collections.meta;
+  var moment = Moment();
+  meta.findOne({year: moment.year(),week:moment.week()})
+      .then(function(data){
+         reply.view('index',{
+          keywords:data.keywords,
+          description: data.description
+        });
+      });
+
+ };
  exports.getComments = function (request, reply) {
    var Comment = request.collections.comment;
    var from = request.params.from;

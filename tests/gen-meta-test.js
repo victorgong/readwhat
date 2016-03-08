@@ -1,6 +1,6 @@
 'use strict'
 var store = require('../lib/store');
-var worker = require('../lib/after_doer/set_top_count.js');
+var worker = require('../lib/after_doer/gen_meta.js');
 
 store(function(waterline){
 	worker({store:waterline});

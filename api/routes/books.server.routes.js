@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 var Books      = require('../../api/controllers/books.server.controller');
+var Moment = require('moment');
 
 module.exports = function (server){
 
@@ -10,9 +11,7 @@ module.exports = function (server){
   [{
       path: '/',
       method: 'GET',
-      handler: {
-        view:'index'
-      }
+      handler: Books.index
    },
     {
       path: '/api/books/thisweek',
