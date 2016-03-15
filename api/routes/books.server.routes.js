@@ -19,11 +19,6 @@ module.exports = function (server){
       handler: Books.thisWeek
    },
    {
-       path: '/api/books/getcomments/{from}/{bookid}',
-       method: 'GET',
-       handler: Books.getComments
-    },
-   {
       path: '/api/books/lastweek',
       method: 'GET',
       handler: Books.lastWeek

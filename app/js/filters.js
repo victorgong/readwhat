@@ -31,6 +31,7 @@ app.filter('ranknum',[ function() {
 }]);
 app.filter('topweeks',[ function() {
   return function(input){
+    input = input ===0?1:input;
     return input.toString()+'周上榜';
   }
 }]);

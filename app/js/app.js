@@ -22,7 +22,7 @@ rwApp.config(['$routeProvider',
         controller: 'ThisWeekCtrl'
       }).
       when('/books/lastweek', {
-        templateUrl: 'partials/book-thisweek.html',
+        templateUrl: 'partials/book-lastweek.html',
         controller: 'LastWeekCtrl'
       }).
       when('/books/history', {

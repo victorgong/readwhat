@@ -44400,7 +44400,7 @@ rwApp.config(['$routeProvider',
         controller: 'ThisWeekCtrl'
       }).
       when('/books/lastweek', {
-        templateUrl: 'partials/book-thisweek.html',
+        templateUrl: 'partials/book-lastweek.html',
         controller: 'LastWeekCtrl'
       }).
       when('/books/history', {
@@ -44420,8 +44420,8 @@ var rwControllers = angular.module('rwControllers', []);
 
 rwControllers.controller('HeaderCtrl', ['$scope','$location','$rootScope',
   function($scope,$location,$rootScope) {
-    $scope.menus = [{uri:"/books/thisweek",name:"本周"}
-                //  ,{uri:"/books/lastweek",name:"上周"}
+    $scope.menus = [{uri:"!/books/thisweek",name:"本周"}
+                   ,{uri:"!/books/lastweek",name:"上周"}
                 //  ,{uir:"/books/history",name:"历史"}
                 ];
     $scope.isActive=function(path){
@@ -44486,6 +44486,12 @@ app.filter('ranknum',[ function() {
     return Math.floor(input * 10000);
 	}
 }]);
+app.filter('topweeks',[ function() {
+  return function(input){
+    input = input ===0?1:input;
+    return input.toString()+'周上榜';
+  }
+}]);
 
 'use strict';
 
@@ -44512,9 +44518,11 @@ rwServices.factory('Book', ['$resource','Util',
   };
 
 	var getLastWeek = function(){
-		return $resource(baseUri+'lastweek?t='+Util.ranFunc().toString(), {}, {
+		return $resource(baseUri+'lastweek?t=:ts', {
+			ts: '@ts'
+		}, {
 			  query: {method:'GET', isArray:true}
-			}).query();
+			}).query({ts:Util.ranFunc().toString()});
 	};
 	var getThWeek = function(year,week){
 		var uri2 = "{year}/{week}".replace('{year}',year)
@@ -44526,8 +44534,7 @@ rwServices.factory('Book', ['$resource','Util',
 	return {
 			thisWeek: getThisWeek,
 			lastWeek: getLastWeek,
-			thWeek: getThWeek,
-      getComments: getComments
+			thWeek: getThWeek
 	       };
   }]);
 

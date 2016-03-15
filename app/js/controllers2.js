@@ -6,8 +6,8 @@ var rwControllers = angular.module('rwControllers', []);
 
 rwControllers.controller('HeaderCtrl', ['$scope','$location','$rootScope',
   function($scope,$location,$rootScope) {
-    $scope.menus = [{uri:"/books/thisweek",name:"本周"}
-                //  ,{uri:"/books/lastweek",name:"上周"}
+    $scope.menus = [{uri:"!/books/thisweek",name:"本周"}
+                   ,{uri:"!/books/lastweek",name:"上周"}
                 //  ,{uir:"/books/history",name:"历史"}
                 ];
     $scope.isActive=function(path){

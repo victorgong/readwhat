@@ -23,9 +23,11 @@ rwServices.factory('Book', ['$resource','Util',
   };
 
 	var getLastWeek = function(){
-		return $resource(baseUri+'lastweek?t='+Util.ranFunc().toString(), {}, {
+		return $resource(baseUri+'lastweek?t=:ts', {
+			ts: '@ts'
+		}, {
 			  query: {method:'GET', isArray:true}
-			}).query();
+			}).query({ts:Util.ranFunc().toString()});
 	};
 	var getThWeek = function(year,week){
 		var uri2 = "{year}/{week}".replace('{year}',year)
@@ -37,8 +39,7 @@ rwServices.factory('Book', ['$resource','Util',
 	return {
 			thisWeek: getThisWeek,
 			lastWeek: getLastWeek,
-			thWeek: getThWeek,
-      getComments: getComments
+			thWeek: getThWeek
 	       };
   }]);
 
