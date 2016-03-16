@@ -31,8 +31,7 @@ app.filter('ranknum',[ function() {
 }]);
 app.filter('topweeks',[ function() {
   return function(input){
-    if (undefined === input)
-    {
+    if (undefined === input){
       input = 1;
     }
     input = input ===0?1:input;
