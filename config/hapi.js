@@ -33,7 +33,9 @@ module.exports = function () {
 
   // Setup global variables
   server.app.sessionName = Config.sessionName;
-
+  server.state('session', {
+    strictHeader:false
+  });
 
 
   var plugins = [
