@@ -20,11 +20,11 @@ exports.thisWeek = function (request, reply) {
       .exec(function(err,data){
          reply(data.reverse());
        });
-  
+
  };
  exports.index = function(request,reply){
   var meta = request.collections.meta;
-  var moment = Moment();
+  var moment = Moment().subtract(7, 'days');
   meta.findOne({year: moment.year(),week:moment.week()})
       .then(function(data){
          data = data || {keywords:'',description:''};
