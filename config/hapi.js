@@ -21,6 +21,13 @@ module.exports = function () {
     connections: {
       router: {
         stripTrailingSlash: true
+
+      },
+      routes: {
+       cors: true,
+       state:{
+           strictHeader:false
+       }
       }
     }
   };
@@ -33,10 +40,6 @@ module.exports = function () {
 
   // Setup global variables
   server.app.sessionName = Config.sessionName;
-  server.state('session', {
-    strictHeader:false
-  });
-
 
   var plugins = [
     { register: require('bell') },
