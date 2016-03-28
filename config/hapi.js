@@ -24,10 +24,9 @@ module.exports = function () {
 
       },
       routes: {
-       cors: true,
-       state:{
-           strictHeader:false
-       }
+        state:{
+            failAction:'log'
+        }
       }
     }
   };
