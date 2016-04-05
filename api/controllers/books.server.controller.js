@@ -20,7 +20,7 @@ exports.thisWeek = function (request, reply) {
       .exec(function(err,data){
          reply(data.reverse());
        });
-  
+
  };
  exports.index = function(request,reply){
   var meta = request.collections.meta;

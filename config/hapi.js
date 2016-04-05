@@ -21,6 +21,12 @@ module.exports = function () {
     connections: {
       router: {
         stripTrailingSlash: true
+
+      },
+      routes: {
+        state:{
+            failAction:'log'
+        }
       }
     }
   };
@@ -33,8 +39,6 @@ module.exports = function () {
 
   // Setup global variables
   server.app.sessionName = Config.sessionName;
-
-
 
   var plugins = [
     { register: require('bell') },
