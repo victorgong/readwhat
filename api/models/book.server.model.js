@@ -67,6 +67,10 @@ var Book = {
    topWeeks:{
     type: 'integer',
     defaultsTo: 0
+   },
+   readHref:{
+    type:'string',
+    defaultsTo:''
    }
   }
 };

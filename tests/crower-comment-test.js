@@ -10,7 +10,7 @@ process.on('uncaughtException',function(err){
 });
 store(function(waterline){
   CrowerConf.forEach(function(option){
-    waterline.collections.rank.find({from:option.from}).sort('rankVal desc').limit(10).populate('book').exec(function(err,books){
+    waterline.collections.rank.find({from:option.from,year:moment.year(),week:moment.week()}).sort('rankVal desc').limit(10).populate('book').exec(function(err,books){
   		new CrowerHelper(Conf.cron.concurrent || 2,function(rank){
         var book = rank.book;
   			var bookUniqueId = book.fromUniqueId;

@@ -15,6 +15,6 @@
 	    <li role="presentation" ng-repeat="tag in book.book.tags"><label class="btn">{{tag}}</label></li>
 	  </ul>
       <p>
-        <a class="btn btn-lg btn-primary" href="{{book.book.targetHref}}" target="blank" role="button">去阅读</a>
+        <a class="btn btn-lg btn-primary" href="{{book.book | targethref}}" target="blank" role="button">去阅读</a>
       </p>
 </div>

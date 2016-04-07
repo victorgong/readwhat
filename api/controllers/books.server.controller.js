@@ -12,7 +12,7 @@ exports.thisWeek = function (request, reply) {
 
   var Rank = request.collections.rank;
   var Book = request.collections.book;
-  var moment = Moment().subtract(7, 'days');
+  var moment = Moment();//Moment().subtract(7, 'days');
   var year = moment.year();
   var week = moment.week();
   Rank.find({year:year, week:week}).sort('rankVal desc').limit(10).populate('book')

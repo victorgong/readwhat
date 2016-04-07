@@ -38,3 +38,9 @@ app.filter('topweeks',[ function() {
     return input.toString()+'周上榜';
   }
 }]);
+app.filter('targethref',[ function() {
+  return function(input){ 
+    console.log(input.readHref);
+    return undefined!==input.readHref && input.readHref!==null && input.readHref!==''?input.readHref:input.targetHref;
+  }
+}]);
